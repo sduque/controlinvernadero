@@ -21,9 +21,9 @@ $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
-$app->get('/Verificar valores', function() use($app) {
+$app->get('/VerificarValores', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return $app['twig']->render('index.twig');
+  return "control de invernadero";
 });
 
 $app->run();
