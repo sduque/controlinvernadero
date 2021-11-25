@@ -29,7 +29,7 @@ $app->get('/VerificarValores', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('verificarvalores.twig');
 });
-$app->get('/pruebaGet/{nombre}', function() use($app) {
+$app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
   return $nombre;
 });
