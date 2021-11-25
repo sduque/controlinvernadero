@@ -1,6 +1,7 @@
 <?php
 use Symfony\Component\Httpfoundation\Request;
 use Symfony\Component\Httpfoundation\Response;
+
 date_default_timezone_set('America/Bogota');
 
 require('../vendor/autoload.php');
@@ -28,5 +29,8 @@ $app->get('/VerificarValores', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('verificarvalores.twig');
 });
-
+$app->get('/pruebaGet', function() use($app) {
+  $app['monolog']->addDebug('logging output.');
+  return $nombre;
+});
 $app->run();
