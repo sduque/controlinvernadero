@@ -23,7 +23,7 @@ $app->get('/', function() use($app) {
 });
 $app->get('/VerificarValores', function() use($app) {
   $app['monolog']->addDebug('logging output.');
-  return "control de invernadero";
+  return $app['twig']->render('verificarvalores.twig');
 });
 
 $app->run();
