@@ -33,4 +33,8 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
   return $nombre;
 });
+$app->post('/rutaPost', function(Request $request) use($app) {
+  
+  return "te has conectado a una ruta POST";
+});
 $app->run();
