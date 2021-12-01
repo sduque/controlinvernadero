@@ -36,7 +36,7 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
 });
 */
 
-$app->post('/guardarAmbiente', function() use($app) {
+$app->post('/guardarAmbiente', function (Request $request) use ($app) {	
   $temperatura = 0;
   //$temperatura = $request->get('temperatura');
   //$humedad = $request->get('humedad');
