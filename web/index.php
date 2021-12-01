@@ -33,18 +33,19 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
   return $nombre;
 });
-$app->post('/guardarAmbiente', function(Request $request) use($app) {
- 
-  $temperatura = $request->get('temperatura');
-  $humedad = $request->get('humedad');
-  $luz = $request->get('luz');
 
-		$data = array(
+$app->post('/guardarAmbiente', function(Request $request) use($app) {
+  $temperatura = 0;
+  $temperatura = $request->get('temperatura');
+  //$humedad = $request->get('humedad');
+  //$luz = $request->get('luz');
+
+/*		$data = array(
 			"fecha"=>date('Y-m-d H:i:s'),
 			"temperatura" => $temperatura,
 			"humedad" => $humedad,
 			"luz" => $luz
-		);
+		);*/
 
 	return $temperatura;
 	
