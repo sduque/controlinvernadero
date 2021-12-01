@@ -1,6 +1,6 @@
 <?php
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Httpfoundation\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 date_default_timezone_set('America/Bogota');
 
@@ -38,24 +38,22 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
 
 $app->post('/guardarAmbiente', function (Request $request) use ($app) {	
   $temperatura = 0;
-  //$temperatura = $request->get('temperatura');
-  //$humedad = $request->get('humedad');
-  //$luz = $request->get('luz');
+  $temperatura = $request->get('temperatura');
+  $humedad = $request->get('humedad');
+  $luz = $request->get('luz');
 
-/*		$data = array(
+		$data = array(
 			"fecha"=>date('Y-m-d H:i:s'),
 			"temperatura" => $temperatura,
 			"humedad" => $humedad,
 			"luz" => $luz
-		);*/
-
-	return $temperatura;
+		);
 	
-	//$dbconn = pg_pconnect("ec2-44-198-236-169.compute-1.amazonaws.com port=5432 dbname=dduoiujimkorgl user=qtxzkhxiiwythp password=85d35b4c909dc5ee7f2ae30c73fa03018aea6b400f011ecf75696e84404c0ef9");
-	//$respuesta = pg_insert($dbconn, "invernadero", $data);
+	$dbconn = pg_pconnect("ec2-44-198-236-169.compute-1.amazonaws.com port=5432 dbname=dduoiujimkorgl user=qtxzkhxiiwythp password=85d35b4c909dc5ee7f2ae30c73fa03018aea6b400f011ecf75696e84404c0ef9");
+	$respuesta = pg_insert($dbconn, "invernadero", $data);
 
-	//echo $respuesta; echo "<br><br>";
+	echo $respuesta; echo "<br><br>";
 
-   	//return "OK";
+   	return "OK";
 });
 $app->run();
