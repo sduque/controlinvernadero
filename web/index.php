@@ -47,7 +47,7 @@ $app->post('/guardarAmbiente', function(Request $request) use($app) {
 		);
 
 	$dbconn = pg_pconnect("ec2-44-198-236-169.compute-1.amazonaws.com port=5432 dbname=dduoiujimkorgl user=qtxzkhxiiwythp password=85d35b4c909dc5ee7f2ae30c73fa03018aea6b400f011ecf75696e84404c0ef9");
-	$respuesta = pg_insert($dbconn, "ambiente", $data);
+	$respuesta = pg_insert($dbconn, "invernadero", $data);
 
 	echo $respuesta; echo "<br><br>";
 
