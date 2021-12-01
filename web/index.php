@@ -25,6 +25,7 @@ $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
+/*
 $app->get('/VerificarValores', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('verificarvalores.twig');
@@ -33,8 +34,9 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
   $app['monolog']->addDebug('logging output.');
   return $nombre;
 });
+*/
 
-$app->post('/guardarAmbiente', function(Request $request) use($app) {
+$app->post('/guardarAmbiente', function() use($app) {
   $temperatura = 0;
   //$temperatura = $request->get('temperatura');
   //$humedad = $request->get('humedad');
