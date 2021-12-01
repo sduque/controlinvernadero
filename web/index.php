@@ -1,5 +1,5 @@
 <?php
-use Symfony\Component\Httpfoundation\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Httpfoundation\Response;
 
 date_default_timezone_set('America/Bogota');
