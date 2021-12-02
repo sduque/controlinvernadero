@@ -37,10 +37,10 @@ $app->get('/pruebaGet/{nombre}', function($nombre) use($app) {
 */
 
 $app->post('/guardarAmbiente', function (Request $request) use ($app) {	
-  $temperatura = 0;
   $temperatura = $request->get('temperatura');
   $humedad = $request->get('humedad');
   $luz = $request->get('luz');
+  $tabla = "invernadero";
 
 		$data = array(
 			"fecha"=>date('Y-m-d H:i:s'),
@@ -50,7 +50,7 @@ $app->post('/guardarAmbiente', function (Request $request) use ($app) {
 		);
 	
 	$dbconn = pg_pconnect("host=ec2-44-198-236-169.compute-1.amazonaws.com port=5432 dbname=dduoiujimkorgl user=qtxzkhxiiwythp password=85d35b4c909dc5ee7f2ae30c73fa03018aea6b400f011ecf75696e84404c0ef9");
-	$respuesta = pg_insert($dbconn, "invernadero", $data);
+	$respuesta = pg_insert($dbconn, $tabla, $data);
 
 	echo $respuesta; 
 
